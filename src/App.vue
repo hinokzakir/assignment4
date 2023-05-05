@@ -1,6 +1,4 @@
-<template>
-  <h1>fhdsuoifghsdaohgo</h1>
-</template>
+<template></template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
@@ -15,9 +13,8 @@ export default {
 
 <style>
 body {
-  background-color: #d9fff5;
+  background-color: #20332e;
 }
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
