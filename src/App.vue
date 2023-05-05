@@ -1,19 +1,32 @@
-<template></template>
+<template>
+  <div class="navbar"></div>
+  <img src="" alt="Italian Trulli" />
+  <div class="footer"></div>
+</template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
-  },
 };
 </script>
 
 <style>
 body {
-  background-color: #20332e;
+  background-color: #d9fff5;
+  padding: 0;
+  margin: 0;
+}
+.navbar {
+  width: 100%;
+  height: 5rem;
+  background-color: #b9f5d8;
+}
+.footer {
+  width: 100%;
+  height: 5rem;
+  background-color: #b9f5d8;
+  position: absolute;
+  bottom: 0;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -21,6 +34,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
