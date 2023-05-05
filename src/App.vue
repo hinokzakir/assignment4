@@ -3,13 +3,33 @@
   <!-- Booking Page -->
   <div v-if="BookingPage == true">
     <!--map-->
-
+    <img
+      src="https://arkinova.se/wp-content/uploads/2020/01/Vision-Ume%C3%A5-C-02.jpg"
+      alt="logo"
+      style="width: 100%; height: 20rem; margin-top: 10px"
+    />
     <!--Buttons-->
     <div class="container">
-      <button class="button-ios" @click="BookingPage = false">
+      <button
+        class="button-ios"
+        @click="(BookingPage = false), (CheckOutPage = true)"
+      >
         Book a ride
       </button>
       <button class="button-ios" @click="BookingPage = false">Log out</button>
+    </div>
+  </div>
+  <!-- checkout page -->
+  <div v-else-if="CheckOutPage == true">
+    KÖP NUUUUU
+    <div class="container">
+      <button
+        class="button-ios"
+        @click="(CheckOutPage = false), (BookingPage = true)"
+      >
+        Cancel
+      </button>
+      <button class="button-ios">Purchase</button>
     </div>
   </div>
   <!-- landing page -->
@@ -45,7 +65,6 @@ export default {
   data() {
     return {
       BookingPage: false,
-      LoginPage: true,
       CheckOutPage: false,
       ProfilePage: false
     }
