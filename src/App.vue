@@ -1,8 +1,8 @@
 <template>
-  <div class="navbar"></div>
   <!-- Booking Page -->
   <div v-if="BookingPage == true">
     <!--map-->
+    <div class="navbar"></div>
     <img
       src="https://arkinova.se/wp-content/uploads/2020/01/Vision-Ume%C3%A5-C-02.jpg"
       alt="logo"
@@ -23,6 +23,7 @@
   </div>
   <!-- checkout page -->
   <div v-else-if="CheckOutPage == true">
+    <div class="navbar"></div>
     KÖP NUUUUU
     <div class="container">
       <button
@@ -36,6 +37,7 @@
   </div>
   <!-- landing page -->
   <div v-else>
+    <div class="navbar"></div>
     <!-- logo -->
     <img
       src="https://seeklogo.com/images/T/taxi-vehicle-sign-logo-04DAE3D598-seeklogo.com.png"
@@ -91,13 +93,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vh;
+  height: 35vh;
   display: flex;
   flex-direction: column;
 }
 .button-fb {
   width: 15rem;
-  height: 6rem;
+  height: 5rem;
   background-color: #1877f2;
   color: white;
   font-weight: bolder;
@@ -109,7 +111,7 @@ body {
 
 .button-google {
   width: 15rem;
-  height: 6rem;
+  height: 5rem;
   background-color: white;
   border-style: solid;
   color: black;
@@ -123,7 +125,7 @@ body {
 
 .button-ios {
   width: 15rem;
-  height: 6rem;
+  height: 5rem;
   background-color: black;
   color: white;
   font-weight: bolder;
