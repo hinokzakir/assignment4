@@ -9,8 +9,11 @@
 
   <div class="title">THE TAXI APP</div>
   <!-- buttons -->
-  <div class="button-fb">Continue with facebook</div>
-  <div class="button-ios" style="margin-top: 1rem">Continue with Apple</div>
+  <div class="button-container">
+    <div class="button-fb">Continue with facebook</div>
+    <div class="button-google">Continue with Google</div>
+    <div class="button-ios">Continue with Apple</div>
+  </div>
 </template>
 
 <script>
@@ -25,9 +28,17 @@ body {
   padding: 0;
   margin: 0;
 }
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+}
 .button-fb {
   width: 15rem;
-  height: 3rem;
+  height: 6rem;
   background-color: #1877f2;
   color: white;
   font-weight: bolder;
@@ -36,9 +47,24 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.button-google {
+  width: 15rem;
+  height: 6rem;
+  background-color: white;
+  border-style: solid;
+  color: black;
+  font-weight: bolder;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .button-ios {
   width: 15rem;
-  height: 3rem;
+  height: 6rem;
   background-color: black;
   color: white;
   font-weight: bolder;
@@ -46,6 +72,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 .navbar {
   width: 100%;
