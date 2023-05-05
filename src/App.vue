@@ -1,18 +1,39 @@
 <template>
   <div class="navbar"></div>
-  <!-- logo -->
-  <img
-    src="https://seeklogo.com/images/T/taxi-vehicle-sign-logo-04DAE3D598-seeklogo.com.png"
-    alt="logo"
-    style="width: 8rem; margin-top: 10px"
-  />
+  <!-- Booking Page -->
+  <div v-if="BookingPage == true">
+    <!--map-->
 
-  <div class="title">THE TAXI APP</div>
-  <!-- buttons -->
-  <div class="button-container">
-    <div class="button-fb">Continue with facebook</div>
-    <div class="button-google">Continue with Google</div>
-    <div class="button-ios">Continue with Apple</div>
+    <!--Buttons-->
+    <div class="container">
+      <button class="button-ios" @click="BookingPage = false">
+        Book a ride
+      </button>
+      <button class="button-ios" @click="BookingPage = false">Log out</button>
+    </div>
+  </div>
+  <!-- landing page -->
+  <div v-else>
+    <!-- logo -->
+    <img
+      src="https://seeklogo.com/images/T/taxi-vehicle-sign-logo-04DAE3D598-seeklogo.com.png"
+      alt="logo"
+      style="width: 8rem; margin-top: 10px"
+    />
+
+    <div class="title">THE TAXI APP</div>
+    <!-- buttons -->
+    <div class="button-container">
+      <button class="button-fb" @click="BookingPage = true">
+        Continue with Facebook
+      </button>
+      <button class="button-google" @click="BookingPage = true">
+        Continue with Google
+      </button>
+      <button class="button-ios" @click="BookingPage = true">
+        Continue with Apple
+      </button>
+    </div>
   </div>
 </template>
 
@@ -20,13 +41,30 @@
 export default {
   name: 'App',
 };
+export default {
+  data() {
+    return {
+      BookingPage: false,
+      LoginPage: true,
+      CheckOutPage: false,
+      ProfilePage: false
+    }
+  }
+}
 </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 <style>
 body {
   background-color: #d9fff5;
   padding: 0;
   margin: 0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
 }
 .button-container {
   display: flex;
@@ -76,7 +114,7 @@ body {
 }
 .navbar {
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   background-color: #b9f5d8;
 }
 .footer {
