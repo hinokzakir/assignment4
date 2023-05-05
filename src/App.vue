@@ -10,13 +10,15 @@
     />
     <!--Buttons-->
     <div class="container">
+      <button class="button-default" @click="BookingPage = false">
+        Log out
+      </button>
       <button
-        class="button-ios"
+        class="button-default"
         @click="(BookingPage = false), (CheckOutPage = true)"
       >
         Book a ride
       </button>
-      <button class="button-ios" @click="BookingPage = false">Log out</button>
     </div>
   </div>
   <!-- checkout page -->
@@ -124,6 +126,18 @@ body {
   height: 6rem;
   background-color: black;
   color: white;
+  font-weight: bolder;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.button-default {
+  width: 15rem;
+  height: 6rem;
+  background-color: #6b8f71;
+  color: #d9fff5;
   font-weight: bolder;
   border-radius: 8px;
   display: flex;
