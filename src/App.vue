@@ -6,12 +6,25 @@
     <img
       src="https://arkinova.se/wp-content/uploads/2020/01/Vision-Ume%C3%A5-C-02.jpg"
       alt="logo"
-      style="width: 100%; height: 20rem; margin-top: 10px"
+      style="width: 20rem; height: 15rem; margin-top: 10px"
     />
+    <h1>Enter Your Origin and Destination</h1>
+    <form>
+      <label for="origin">Origin:</label>
+      <input type="text" id="origin" v-model="origin" /><br />
+
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" v-model="destination" /><br />
+
+      <button type="submit" @click.prevent="submitForm()">Submit</button>
+    </form>
     <!--Buttons-->
     <div class="container">
-      <button class="button-default" @click="BookingPage = false">
-        Log out
+      <button
+        class="button-default"
+        @click="(BookingPage = false), (TimePage = true)"
+      >
+        Return
       </button>
       <button
         class="button-default"
@@ -35,6 +48,27 @@
       <button class="button-ios">Purchase</button>
     </div>
   </div>
+  <!-- time page -->
+  <div v-else-if="TimePage == true">
+    <div>
+      <div class="navbar"></div>
+      <div class="button-container">
+        <div class="title">Select time</div>
+        <va-time-picker v-model="value" size="larger" />
+      </div>
+      <div class="container">
+        <button class="button-default" @click="TimePage = false">
+          Log out
+        </button>
+        <button
+          class="button-default"
+          @click="(TimePage = false), (BookingPage = true)"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+  </div>
   <!-- landing page -->
   <div v-else>
     <div class="navbar"></div>
@@ -48,13 +82,13 @@
     <div class="title">THE TAXI APP</div>
     <!-- buttons -->
     <div class="button-container">
-      <button class="button-fb" @click="BookingPage = true">
+      <button class="button-fb" @click="TimePage = true">
         Continue with Facebook
       </button>
-      <button class="button-google" @click="BookingPage = true">
+      <button class="button-google" @click="TimePage = true">
         Continue with Google
       </button>
-      <button class="button-ios" @click="BookingPage = true">
+      <button class="button-ios" @click="TimePage = true">
         Continue with Apple
       </button>
     </div>
@@ -70,7 +104,19 @@ export default {
     return {
       BookingPage: false,
       CheckOutPage: false,
-      ProfilePage: false
+      ProfilePage: false,
+      TimePage: false,
+      selectedTime: null,
+      origin: '',
+      destination: '',
+    }
+  }
+  ,methods: {
+    submitForm() {
+      // Here you can submit the form data to your server or process it in some other way
+      console.log('Form submitted!');
+      console.log('Origin:', this.origin);
+      console.log('Destination:', this.destination);
     }
   }
 }
@@ -87,7 +133,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vh;
+  height: 35vh;
 }
 .button-container {
   display: flex;
@@ -137,7 +183,7 @@ body {
 }
 .button-default {
   width: 15rem;
-  height: 6rem;
+  height: 3rem;
   background-color: #6b8f71;
   color: #d9fff5;
   font-weight: bolder;
@@ -147,6 +193,7 @@ body {
   align-items: center;
   margin-top: 20px;
 }
+
 .navbar {
   width: 100%;
   height: 4rem;
