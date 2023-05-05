@@ -1,4 +1,4 @@
-<template></template>
+<template><h1>fhdsuoifghsdaohgo</h1></template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
