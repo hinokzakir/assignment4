@@ -1,6 +1,7 @@
 <template>
   <!-- Booking Page -->
   <div v-if="BookingPage == true">
+    <va-avatar color="success"> u </va-avatar>
     <!--map-->
     <div class="navbar"></div>
     <img
@@ -67,6 +68,7 @@
   <!-- time page -->
   <div v-else-if="TimePage == true">
     <div>
+      <va-avatar color="success"> u </va-avatar>
       <div class="navbar"></div>
       <div class="button-container">
         <div class="title">Select time</div>
