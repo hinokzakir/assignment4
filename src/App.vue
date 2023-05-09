@@ -1,9 +1,17 @@
 <template>
   <!-- Booking Page -->
   <div v-if="BookingPage == true">
-    <va-avatar color="success"> u </va-avatar>
     <!--map-->
-    <div class="navbar"></div>
+    <div class="navbar">
+      <div class="text-right">
+        <span
+          class="material-symbols-outlined"
+          v-on:click="(BookingPage = false), (TimePage = true)"
+          >arrow_back_ios</span
+        >
+        <va-avatar color="success">u</va-avatar>
+      </div>
+    </div>
     <img
       src="https://arkinova.se/wp-content/uploads/2020/01/Vision-Ume%C3%A5-C-02.jpg"
       alt="logo"
@@ -37,7 +45,16 @@
   </div>
   <!-- checkout page -->
   <div v-else-if="CheckOutPage == true">
-    <div class="navbar"></div>
+    <div class="navbar">
+      <div class="text-right">
+        <span
+          class="material-symbols-outlined"
+          v-on:click="(CheckOutPage = false), (BookingPage = true)"
+          >arrow_back_ios</span
+        >
+        <va-avatar color="success">u</va-avatar>
+      </div>
+    </div>
 
     <h3>YOUR ORDER</h3>
 
@@ -68,8 +85,14 @@
   <!-- time page -->
   <div v-else-if="TimePage == true">
     <div>
-      <va-avatar color="success"> u </va-avatar>
-      <div class="navbar"></div>
+      <div class="navbar">
+        <div class="text-right">
+          <span class="material-symbols-outlined" v-on:click="TimePage = false"
+            >arrow_back_ios</span
+          >
+          <va-avatar color="success">u</va-avatar>
+        </div>
+      </div>
       <div class="button-container">
         <div class="title">Select time</div>
         <va-time-picker v-model="value" size="larger" />
@@ -142,6 +165,12 @@ data() {
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 <style>
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48;
+  margin-right: 20rem;
+  margin-top: 1rem;
+}
+
 #sumOfCart {
   width: 50%;
   height: 30vh;
@@ -161,6 +190,12 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.text-right {
+  text-align: right;
+  margin-right: 2rem;
+}
+
 .container {
   display: flex;
   justify-content: center;
